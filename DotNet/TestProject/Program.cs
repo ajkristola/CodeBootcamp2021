@@ -12,7 +12,6 @@ namespace TestProject
             Console.WriteLine("How many days until your next birthday?");
             int daysLeft = Convert.ToInt32(Console.ReadLine());
 
-
             // Correct until a person turns 100. Afterwards displays apologetic message.
             // Figure out if age - 1 would work after 100, even in the coming years.
             int leapDays = age / 4 + 1;
@@ -28,4 +27,9 @@ namespace TestProject
     }
 }
 
-// Notes: Counting days is inconvenient, find a way to do this. 
+// Notes: 
+// Counting days is inconvenient, find an alternative way to do this. 
+// Andrej: make a dict with months and iterate through it until you hit the correct index,
+// then go back a month then add date
+// So make an array with the months equivalent to dates, go through it, then minus one month, plus days. 
+// Another problem: how do I read numbers from a date (string)?
