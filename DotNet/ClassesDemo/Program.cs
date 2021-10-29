@@ -7,28 +7,15 @@ namespace ClassesDemo
         static void Main(string[] args)
         {
         // 'Car' is a class, 'first' is an instance.
-            Car first = new();
-            first.Doors = "2-door ";
-            first.Body = "convertible ";
-            first.Model = "Mazda";
-            first.CurrentSpeed = 50;
-            first.TopSpeed = 180;
+            Car first = new Car("2-door ", "convertible ", "Mazda");
             first.Print();
-            first.Accelerate();
             Console.WriteLine("----------------");
 
-            Car second = new();
-            second.Doors = "4-door ";
-            second.Body = "hatchback ";
-            second.Model = "Toyota";
+            Car second = new Car("4-door ", "hatchback ", "Toyota ");
             second.CurrentSpeed = 70;
             second.TopSpeed = 160;
             second.Print();
             second.Accelerate();
-
-            string[] colors = {"red", "blue", "green", "tan"};
-            char[] charset = { 'C', 'G', 'J', 'A', 'M' };
-            Array.Sort(charset);
 
             Passenger Mike = new();
             Mike.CurrentSpeed = second.CurrentSpeed;

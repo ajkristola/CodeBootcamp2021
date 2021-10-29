@@ -2,8 +2,9 @@ using System;
 
 namespace ClassesDemo
 {
-    class Passenger : Car
+    class Passenger
     {
+        public int CurrentSpeed { get; set; }
         public void Mood()
         {
             if (CurrentSpeed > 100)
@@ -17,7 +18,3 @@ namespace ClassesDemo
         }
     }
 }
-
-// Notes:
-// It doesn't make sense for the passenger to inherit the functionality of car. They are separate entities.
-// E.g. a class named SportsCar would make more sense. 
