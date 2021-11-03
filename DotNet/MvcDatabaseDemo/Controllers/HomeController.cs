@@ -28,10 +28,13 @@ namespace MvcDatabaseDemo.Controllers
             return View();
         }
 
-        public IActionResult Orders()
+        public IActionResult Orders(int id) // Added parameter value
         {
-             NorthwindContext context = new();
-            List<Order> allOrders = context.Orders.ToList();
+            NorthwindContext context = new();
+            List<Order> allOrders = (from o in context.Orders   // LINQ query, o is a variable that holds a single order
+                                    where o.EmployeeId == id
+                                    orderby o.OrderDate descending
+                                    select o).ToList();
 
             ViewBag.AllOrders = allOrders;
 
