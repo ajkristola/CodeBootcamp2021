@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Orders";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Placeholder: Display database data.</p>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Ship Name</th>
+            <th>Ship City</th>
+            <th>Ship Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (MvcDatabaseDemo.Models.Order order in ViewBag.AllOrders)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.OrderDate.Value.ToString("d.M.yyyy")</td>
+                <td>@order.ShipName</td>
+                <td>@order.ShipCity</td>
+                <td>@order.ShipAddress</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+}

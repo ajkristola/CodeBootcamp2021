@@ -25,16 +25,16 @@ namespace MvcDatabaseDemo.Controllers
 
             ViewBag.AllCustomers = allCustomers;
 
-            NorthwindContext context2 = new();
+            return View();
+        }
+
+        public IActionResult Orders()
+        {
+             NorthwindContext context = new();
             List<Order> allOrders = context.Orders.ToList();
 
             ViewBag.AllOrders = allOrders;
 
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 
