@@ -28,7 +28,7 @@ namespace MvcDatabaseDemo.Controllers
             return View();
         }
 
-        public IActionResult Orders(int id) // Added parameter value
+        public IActionResult Orders(int id) // Added parameter value, now searching Orders/id will generate the appropriate table!
         {
             NorthwindContext context = new();
             List<Order> allOrders = (from o in context.Orders   // LINQ query, o is a variable that holds a single order

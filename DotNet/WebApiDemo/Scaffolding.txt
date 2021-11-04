@@ -1,0 +1,11 @@
+To scaffold the Northwind database through the CLI:
+
+1. confirm EF is installed
+2. install nuget packages
+3. run the following program:
+
+dotnet ef dbcontext scaffold "Server=localhost;Database=Northwind;User Id=SA;Password=mennaanko%vegepois1928;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+More info:
+https://docs.microsoft.com/en-us/ef/core/cli/dotnet
+
