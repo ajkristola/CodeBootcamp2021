@@ -11,7 +11,7 @@ namespace WebApiDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MyTestController : ControllerBase
+    public class HelloController : ControllerBase
     {
         public string Hello()
         {

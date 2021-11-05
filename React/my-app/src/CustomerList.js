@@ -30,6 +30,7 @@ class CustomerList extends React.Component {
             list.push(<p>Id: {customer.customerId} – Name: {customer.companyName}</p>);
         }
 
+        // Add Bootstrap on the HTML table
         return (
             <div>
                 <h1>Customer List</h1>

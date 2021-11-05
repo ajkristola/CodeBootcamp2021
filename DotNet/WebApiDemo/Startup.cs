@@ -33,6 +33,7 @@ namespace WebApiDemo
                                   {
                                       builder.AllowAnyMethod();
                                       builder.AllowAnyOrigin();
+                                      builder.AllowAnyHeader();
                                   });
             });
 
