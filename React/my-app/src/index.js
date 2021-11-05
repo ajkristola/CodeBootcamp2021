@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LifecycleDemo from './LifecycleDemo';
+import CustomerList from './CustomerList';
 
 // this is where you place the components
 ReactDOM.render(
   <React.StrictMode>
     <LifecycleDemo />
+    <CustomerList />
   </React.StrictMode>,
   document.getElementById('root')
 );

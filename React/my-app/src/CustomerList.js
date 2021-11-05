@@ -11,7 +11,7 @@ class CustomerList extends React.Component {
     componentDidMount() {
         console.log("In CustomerList.componentDidMount");
 
-        fetch('https://localhost:')
+        fetch('https://localhost:5001/api/customers')
             .then(response => response.json())
             .then(json => {
                 console.log(json);
@@ -33,7 +33,7 @@ class CustomerList extends React.Component {
         return (
             <div>
                 <h1>Customer List</h1>
-                <p>Number of customer: {this.state.customers.length}</p>
+                <p>Number of customers: {this.state.customers.length}</p>
                 {list}
             </div>);
     }
