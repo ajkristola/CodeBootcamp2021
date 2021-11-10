@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -61,6 +62,8 @@ namespace MyFinalDemo.Controllers
         }
 
         // GET: Memos/Create
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -69,6 +72,7 @@ namespace MyFinalDemo.Controllers
         // POST: Memos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,MemoQuestion,MemoAnswer")] Memos memos)
@@ -83,6 +87,7 @@ namespace MyFinalDemo.Controllers
         }
 
         // GET: Memos/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,6 +106,7 @@ namespace MyFinalDemo.Controllers
         // POST: Memos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,MemoQuestion,MemoAnswer")] Memos memos)
@@ -134,6 +140,7 @@ namespace MyFinalDemo.Controllers
         }
 
         // GET: Memos/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -152,8 +159,10 @@ namespace MyFinalDemo.Controllers
         }
 
         // POST: Memos/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var memos = await _context.Memo.FindAsync(id);
