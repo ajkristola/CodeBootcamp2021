@@ -1,0 +1,19 @@
+Notes:
+
+EF is an Object Relation Mapper (ORM). It takes the class properties (fields?)
+and creates table entries representing them. Database is updated using migrations. 
+Pros: No SQL, quick, works for basic applications.
+
+Optionally, create Data Access Object (DAO) for manual table creation 
+and querying in SQL. 
+Pros: more visibility in finding problems, preferred in large applications.
+
+To use: 
+
+1. <add-migration "name"> in PM console
+2. Computer creates "name" file in Migrations with code to create tables.
+3. <update-database> in PM console
+4. ORM creates tables, in this case for 
+(a) user accounts, logins etc.
+(b) memo questions and answers. 
+5. 

@@ -1,0 +1,6 @@
+ToListAsync
+- 
+
+Where( m => m.MemoQuestion.Contains(SearchPhrase))
+- filtering search results
+- uses an arrow function or a Lambda function
