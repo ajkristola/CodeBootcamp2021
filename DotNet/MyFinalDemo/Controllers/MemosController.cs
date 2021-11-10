@@ -32,10 +32,14 @@ namespace MyFinalDemo.Controllers
         }
 
         // POST: Memos/ShowSearchResults
-        // Copied entire list from Index method. Added Where to filter.
+        // Copied get entire list from Index method. Added Where to filter both questions and answers.
+        // || is a conditional logical OR operator = evaluates whether either the left or right of it is true,
+        // but stops at left if it returns true. 
+        // More info: https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0
         public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
         {
-            return View("Index", await _context.Memo.Where( m => m.MemoQuestion.Contains(SearchPhrase)).ToListAsync());
+            return View("Index", await _context.Memo.Where( m => m.MemoQuestion.Contains(SearchPhrase) 
+                                                           || m.MemoAnswer.Contains(SearchPhrase)).ToListAsync());
         }
 
         // GET: Memos/Details/5
